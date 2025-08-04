@@ -1,0 +1,11 @@
+import os
+from openai import OpenAI
+
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
+
+def get_embedding(text: str) -> list[float]:
+    response = client.embeddings.create(
+        model="text-embedding-ada-002", input=[text]  # Wrap in list
+    )
+    return response.data[0].embedding
