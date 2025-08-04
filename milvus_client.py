@@ -1,3 +1,5 @@
+import os
+
 from pymilvus import (
     connections,
     Collection,
@@ -9,7 +11,9 @@ from pymilvus import (
 
 
 def init_milvus():
-    connections.connect(alias="default", host="localhost", port="19530")
+    host = os.getenv("MILVUS_HOST", "localhost")
+    port = os.getenv("MILVUS_PORT", "19530")
+    connections.connect(alias="default", host=host, port=port)
 
     if utility.has_collection("rag_demo"):
         collection = Collection("rag_demo")
