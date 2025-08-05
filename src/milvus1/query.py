@@ -1,11 +1,11 @@
-from milvus_client import init_milvus
-from embedder import get_embedding
+from milvus1.milvus_client import init_milvus
+from milvus1.embedder import get_embedding
 import openai
 
 
-def query_rag(user_query: str, collection):
+def query_rag(user_query: str, collection, api_key: str):
     collection.load()
-    embedding = get_embedding(user_query)
+    embedding = get_embedding(user_query, api_key)
     results = collection.search(
         data=[embedding],
         anns_field="embedding",

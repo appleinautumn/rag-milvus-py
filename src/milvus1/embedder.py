@@ -1,10 +1,8 @@
-import os
 from openai import OpenAI
 
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-
-def get_embedding(text: str) -> list[float]:
+def get_embedding(text: str, api_key: str) -> list[float]:
+    client = OpenAI(api_key=api_key)
     response = client.embeddings.create(
         model="text-embedding-ada-002", input=[text]  # Wrap in list
     )
