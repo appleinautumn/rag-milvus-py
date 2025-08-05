@@ -37,6 +37,11 @@ This project demonstrates a simple Retrieval-Augmented Generation (RAG) pipeline
 4. **Run Milvus**  
    - Make sure you have a Milvus instance running locally on port 19530.
 
+5. **Run the project:**
+   ```
+   poetry run main
+   ```
+
 ## Usage
 
 - **Ingest and Query Example**  
