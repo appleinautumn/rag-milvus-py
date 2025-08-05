@@ -8,6 +8,12 @@ This project demonstrates a simple Retrieval-Augmented Generation (RAG) pipeline
 - Builds a vector index for efficient similarity search
 - Supports semantic search and question answering using OpenAI embeddings
 
+## Dependencies
+
+- [Milvus](https://milvus.io/) (vector database, must be running locally or accessible remotely)
+- [Poetry](https://python-poetry.org/) (for dependency management)
+- OpenAI API key
+
 ## Setup Instructions
 
 1. **Clone the repository**  
