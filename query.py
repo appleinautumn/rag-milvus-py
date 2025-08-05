@@ -3,8 +3,7 @@ from embedder import get_embedding
 import openai
 
 
-def query_rag(user_query: str):
-    collection = init_milvus()
+def query_rag(user_query: str, collection):
     collection.load()
     embedding = get_embedding(user_query)
     results = collection.search(

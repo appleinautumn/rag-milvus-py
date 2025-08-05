@@ -2,8 +2,7 @@ from milvus_client import init_milvus
 from embedder import get_embedding
 
 
-def ingest_texts(texts: list[str]):
-    collection = init_milvus()
+def ingest_texts(texts: list[str], collection):
     embeddings = [get_embedding(text) for text in texts]
 
     data = [texts, embeddings]
